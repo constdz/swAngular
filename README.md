@@ -1,27 +1,23 @@
 # SwApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+Application Angular permettant d'accèder à l'API Star Wars (https://swapi.py4e.com/api/)
 
-## Development server
+## Prérequis
+node version 20.5.0 (or plus)
+npm version 10.5.2 (or plus)
+AngularCLI version 17.3.5 (ou plus)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Intallation
+Lancer *npm i* à la racine du projet afin d'installer les dépendances.
 
-## Code scaffolding
+## Lancement
+Lancer *npm start* à la racine du projet afin de lancer l'application.
+Elle sera accessible à localhost/4200.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Démarche
+Le routing de l'appli reprend celui de l'api, *people/2* permet d'accèder aux détails du personnage 2, *vehicles/14* au véhicule 14, etc...
+Pour l'autocomplete, j'ai utilisé celui de Angular Material.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Points à améliorer
+Pour les planètes, véhicules, etc… les noms ne sont pas encore affichés mais un lien pour accéder à une description détaillée.
+Il peut-être opportun de remplacer les structures contenant les données à afficher par des *Promises* afin d'éviter l'erreur *item.ctx is undefined* qui précède le chargement des données (l'erreur est bénigne et n'impacte pas le côté fonctionnel de l'appli).
