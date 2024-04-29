@@ -1,0 +1,63 @@
+<main class="main">
+    <div>
+        <mat-card>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td class="info-label">Name </td>
+                    <td>{{vehicle.name}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Model </td>
+                    <td>{{vehicle.model}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Manufacturer </td>
+                    <td>{{vehicle.manufacturer}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Cost in credits </td>
+                    <td>{{vehicle.cost_in_credits}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Length </td>
+                    <td>{{vehicle.length}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Max atmos speed </td>
+                    <td>{{vehicle.max_atmosphering_speed}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Crew </td>
+                    <td>{{vehicle.crew}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Passengers </td>
+                    <td>{{vehicle.passengers}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Cargo capacity </td>
+                    <td>{{vehicle.cargo_capacity}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Consumables </td>
+                    <td>{{vehicle.consumables}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Starship class </td>
+                    <td>{{vehicle.vehicle_class}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Pilots </td> 
+                    <td><span class="link" *ngFor="let person of vehicle.pilots" (click)="goCharacter(getId(person))">[{{getId(person)}}] </span></td>
+                </tr>                                
+                <tr>
+                    <td class="info-label">Films </td> 
+                    <td><span class="link" *ngFor="let film of vehicle.films" (click)="goFilm(getId(film))">[{{getId(film)}}] </span></td>
+                </tr>
+            </table>    
+        </mat-card-content> 
+    </mat-card>   
+    </div>
+</main>
+

@@ -1,0 +1,54 @@
+<main class="main">
+    <div>
+        <mat-card>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td class="info-label">Name </td>
+                    <td>{{planet.name}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Rotation period </td> 
+                    <td>{{planet.rotation_period}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Orbital period </td> 
+                    <td>{{planet.orbital_period}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Diameter </td> 
+                    <td>{{planet.diameter}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Climate </td> 
+                    <td>{{planet.climate}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Gravity </td> 
+                    <td>{{planet.gravity}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Terrain </td> 
+                    <td>{{planet.terrain}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Surface water </td> 
+                    <td>{{planet.surface_water}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Population </td> 
+                    <td>{{planet.population}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Residents </td> 
+                    <td><span class="link" *ngFor="let person of planet.residents" (click)="goCharacter(getId(person))">[{{getId(person)}}] </span></td>
+                </tr>
+                <tr *ngIf="planet.films.length > 0">
+                    <td class="info-label">Films </td> 
+                    <td><span class="link" *ngFor="let film of planet.films" (click)="goFilm(getId(film))">[{{getId(film)}}] </span></td>
+                </tr>
+            </table>    
+        </mat-card-content> 
+    </mat-card>   
+    </div>
+</main>

@@ -1,0 +1,35 @@
+<main class="main">
+    <div class="content">
+        <mat-card>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td class="info-label">Title </td>
+                    <td>{{film.title}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Episode Id </td>
+                    <td>{{film.episode_id}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Opening crawl </td>
+                    <td>{{film.opening_crawl}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Director </td>
+                    <td>{{film.director}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Producer </td>
+                    <td>{{film.producer}}</td>
+                </tr>                
+                <tr>
+                    <td class="info-label">Characters </td> 
+                    <td><span class="link" *ngFor="let person of film.characters" (click)="goCharacter(getId(person))">[{{getId(person)}}] </span></td>
+                </tr>
+            </table>    
+        </mat-card-content> 
+    </mat-card>   
+    </div>
+</main>
+

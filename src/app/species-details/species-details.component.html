@@ -1,0 +1,58 @@
+<main class="main">
+    <div>
+        <mat-card>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td class="info-label">Name </td>
+                    <td>{{species.name}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Classification </td>
+                    <td>{{species.classification}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Designation </td>
+                    <td>{{species.designation}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Average height </td>
+                    <td>{{species.average_height}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Skin colors </td>
+                    <td>{{species.skin_colors}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Hair colors </td>
+                    <td>{{species.hair_colors}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Eye colors </td>
+                    <td>{{species.eye_colors}}</td>
+                </tr>
+                <tr>
+                    <td class="info-label">Average lifespan </td>
+                    <td>{{species.average_lifespan}}</td>
+                </tr>
+                <tr *ngIf="species.homeworld">
+                    <td class="info-label">Homeworld </td> 
+                    <td><span class="link" (click)="goPlanet(getId(species.homeworld))" >{{getId(species.homeworld)}}</span></td>
+                </tr>
+                <tr>
+                    <td class="info-label">Language </td>
+                    <td>{{species.language}}</td>
+                </tr>                
+                <tr>
+                    <td class="info-label">People </td> 
+                    <td><span class="link" *ngFor="let person of species.people" (click)="goCharacter(getId(person))">[{{getId(person)}}] </span></td>
+                </tr>
+                <tr>
+                    <td class="info-label">Films </td> 
+                    <td><span class="link" *ngFor="let film of species.films" (click)="goFilm(getId(film))">[{{getId(film)}}] </span></td>
+                </tr>
+            </table>    
+        </mat-card-content> 
+    </mat-card>   
+    </div>
+</main>
