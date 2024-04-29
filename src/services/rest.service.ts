@@ -10,7 +10,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class RestService {
 
   constructor(
-    // private characterRestService: CharacterRestService
     private environment: EnvironmentService,
     private httpClient: HttpClient
   ) { }

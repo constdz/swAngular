@@ -8,18 +8,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NamesService implements OnInit {
-  personNames   !: Map<string, string>;
-  is_set = false;
-  // private charactersSubject = new BehaviorSubject<any[]>([]);
   private charactersSubject = new BehaviorSubject<any[]>([]);
   characters$ = this.charactersSubject.asObservable();
   private namesSubject = new Subject<Map<string, string>>();
   names$ = this.namesSubject.asObservable();
-  // planetNames   !: Map<string, string>;
-  // vehicleNames  !: Map<string, string>;
-  // starshipNames !: Map<string, string>;
-  // speciesNames  !: Map<string, string>;
-  // filmNames     !: Map<string, string>;
 
   constructor(
     private restService: RestService,
@@ -37,7 +29,6 @@ export class NamesService implements OnInit {
       return this.httpClient.get<Characters>(currentUrl).pipe(
         tap(response => {
           data = [...data, ...response.results];
-          // Check for the next page URL
           const nextPageUrl = response.next;
           if (nextPageUrl) {
             // fetching the next page (recursively)
@@ -50,16 +41,11 @@ export class NamesService implements OnInit {
               return map;
             }, {} as Map<string, string>);
             this.namesSubject.next(namesMap);
-            // console.log(namesMap);
-            // this.characters$.subscribe(
-            //   (values : CharacterInfo[]) =>
-            //     console.log(values)
-            // );
           }
         })
       );
     };
-    // Start fetching from the initial URL
+    // start fetching from the initial url
     fetchPage(url).subscribe();
   }
 

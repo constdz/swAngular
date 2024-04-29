@@ -60,18 +60,7 @@ export class AppComponent implements OnInit {
   goCharacter(name:string) {
     console.log(name);
     console.log(this.charactersId);
-    // this.router.navigated = false;
-    this.router.navigate(["people/"+this.charactersId[name]]);
-    // this.namesService.names$.subscribe(
-    //   // (values:Map<string,string>) => {
-    //   (values:any) => {
-    //       // get url id from name     
-    //       console.log(values);     
-    //       this.router.navigate(["people/"+values.get(name)]);
-
-    //     }
-    // );
-    
+    this.router.navigate(["people/"+this.charactersId[name]]); 
   }
   
 }
