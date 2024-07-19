@@ -1,4 +1,4 @@
-# SwApp
+# SwApp : Application Angular 
 
 Application Angular permettant d'accèder à l'API Star Wars (https://swapi.py4e.com/api/)
 
